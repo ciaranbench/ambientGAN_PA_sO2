@@ -6,7 +6,7 @@ Although ample simulated data can be produced for training networks, these ultim
 
 ## Method
 Working toward generating synthetic training data for sO2 quantification (photoacoustic image + underlying optical absorption and scattering distribution), we attempt to generate synthetic versions of  simulated photoacoustic images and their corresponding absorption distribution using an ambientGAN. 
-Here, a WGAN-GP framework is modified to include a pretrained (and fixed) light model appending the generator. Therefore, the network generates input to a light model (i.e. generates an absorption distribution) that produces an image indistinguishable from the GAN’s training set of simulated images when fed through the forward model. 
+Here, a WGAN-GP framework is modified to include a pretrained (and fixed) light model appending the generator. Therefore, the network generates an input to a light model (i.e. generates an absorption distribution) that produces an image indistinguishable from the GAN’s training set of simulated images. 
 Training set: images of circular absorbers of varying sizes in non-scattering homogenous tissue produced with simulated light model. 
 Light model network: trained to map ‘image’ of absorption coefficient to absorbed optical energy (i.e. learns the light model). Once trained, its weights are frozen. 
 
